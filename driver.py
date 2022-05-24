@@ -1,12 +1,12 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
-import chromedriver_autoinstaller
 
 from config_reader import get_credentials
 
 from time import sleep
 import re
+
 
 username, password = get_credentials()
 
@@ -16,7 +16,7 @@ class Driver:
         options = webdriver.ChromeOptions()
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-        self.driver = webdriver.Chrome(chromedriver_autoinstaller.install() ,options=options)
+        self.driver = webdriver.Chrome(options=options)
         # self.driver.minimize_window()
         print("Driver started.")
 
